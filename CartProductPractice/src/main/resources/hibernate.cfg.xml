@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+  "-//Hibernate/Hibernate Configuration DTD//EN" 
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+
+    <!-- Correct Driver -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!-- FIXED URL (XML-safe with &amp; and correct property name) -->
+    <property name="hibernate.connection.url">
+        jdbc:mysql://192.168.8.105:3306/practice?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+    </property>
+
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Parth@123</property>
+
+    <!-- Hibernate Dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <!-- Mapping -->
+    <mapping class="com.demo.beans.Cart"/>
+    <mapping class="com.demo.beans.Product"/>
+
+  </session-factory>
+</hibernate-configuration>
