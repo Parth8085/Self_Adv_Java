@@ -24,7 +24,7 @@ public class ProductListServlet extends HttpServlet {
 		ProductService service=new ProductServiceImpl();
 		List<Product>list=service.getAllProducts();
 		request.setAttribute("productList", list);
-		RequestDispatcher rd=request.getRequestDispatcher("Product.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("Productr.jsp");
 		rd.forward(request, response);
 	}
        
